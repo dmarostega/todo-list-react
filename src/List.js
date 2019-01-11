@@ -2,9 +2,16 @@ import React from "react";
 
 class List extends React.Component{
     render(){
-        return(
-            <h3>Aqui uma Lista</h3>
-        )
+        var todoItems = this.props.entries;
+        var listItems = todoItems.map(item => 
+            <li key={item.key}>{item.value}</li>
+        );
+
+        return (
+            <ul>
+                {listItems}
+            </ul>
+        );
     }
 }
 

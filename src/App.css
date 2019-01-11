@@ -35,5 +35,31 @@
 /*  personalizado */
 
 .todoContainer{
-    border: 1px solid red;
+    border: 1px solid black;
+    width: 600px;
+    margin:0 auto;
+    padding: 15px;
+}
+
+.addItemContainer input{
+  width: 90%;
+  margin: 0 auto;
+}
+.addItemContainer button{
+  width: 9%;
+  margin: 0 auto;
+}
+
+table {
+  width:100%;
+  margin: 0 auto;
+}
+table tr{
+  display: block;
+  border: 1px solid black;
+  width:100%;
+  margin-bottom: 5px;
+}
+table td{
+  padding:5px;
 }
