@@ -1,6 +1,4 @@
 import  React, { Component }  from 'react';
-import AddItemContainer from "./AddItemContainer";
-
 import List from "./List";
 
 class TodoContainer extends Component{
@@ -18,29 +16,32 @@ class TodoContainer extends Component{
 
     addItem(e){
         e.preventDefault();
-        var newItem =   {
-                            key: Date.now(),
-                            value: this.input.current.value
-                        };
 
-        this.setState((p) => {
-            return{
-               itens:p.itens.concat(newItem)
-            };
-        });        
+        if(this.input.current.value!==""){
+            var newItem =   {
+                                key: Date.now(),
+                                value: this.input.current.value
+                            };
+
+            this.setState((p) => {
+                return{
+                itens:p.itens.concat(newItem)
+                };
+            });        
+        }
+        this.input.current.value="";
     }
 
     render(){
         return (
-
             <div className="todoList">
                 <div className="header">
-                <form onSubmit={this.addItem}>
-                    <input type="text" name="taskName" ref={this.input}/>
-                    <button type="submit">Add</button>               
-                </form>
-                <List entries={this.state.itens} />
+                    <form onSubmit={this.addItem}>
+                        <input type="text" name="taskName" ref={this.input}/>
+                        <button type="submit">Add</button>               
+                    </form>
                 </div>
+                <List entries={this.state.itens} />                
             </div>
         )
     }

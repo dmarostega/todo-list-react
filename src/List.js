@@ -8,9 +8,11 @@ class List extends React.Component{
         );
 
         return (
-            <ul>
-                {listItems}
-            </ul>
+            <div className="list">
+                <ul>
+                    {listItems}
+                </ul>
+            </div>
         );
     }
 }
